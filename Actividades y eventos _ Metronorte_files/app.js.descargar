@@ -1,0 +1,421 @@
+$( document ).ready(function() {
+
+    $("#search-icon").click(function(){
+
+      $(this).toggleClass('active');
+      $('#search-modal').toggleClass('active');
+      $('#bars-icon').toggleClass('disabled');
+
+      // Limpiar caja de busqueda y lista de resultados si el buscador no esta activo
+      if (!$('#search-modal').hasClass('active')) {
+        $("#search-input").val('');
+        load_data();
+      }
+
+    });
+
+
+    
+
+
+    const swiper = new Swiper('.swiper-container', {  //This Code initializate the slider
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+          },
+    });
+
+    const newsSwiper = new Swiper('.swiper-news', {  //This Code initializate the slider
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      spaceBetween: 15,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 15
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 3,
+          slidesPerGroup: 2,
+          spaceBetween: 30
+        }
+      },
+      /*pagination: {
+        el: '.swiper-pagination-blue',
+        clickable: true,
+      },*/
+      watchOverflow: true,
+      autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      }
+    });
+
+    const newsMainSwiper = new Swiper('.swiper-main-news', {  //This Code initializate the slider
+      slidesPerColumnFill: 'row',
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 15,
+          slidesPerColumn: 1,
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          slidesPerColumn: 2,
+          spaceBetween: 30
+        }
+      },
+      pagination: {
+        el: '.swiper-pagination-blue',
+        clickable: true,
+      },
+      watchOverflow: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+    });
+
+    const promotionwsSwiper = new Swiper('.swiper-promotions', {  //This Code initializate the slider
+      loop: true,
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 18,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 18
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 3,
+          slidesPerGroup: 2,
+          spaceBetween: 18
+        },
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 4,
+          slidesPerGroup: 1,
+          spaceBetween: 15
+        }
+      },
+      pagination: {
+        el: '.swiper-pagination-blue',
+        clickable: true,
+      },
+      watchOverflow: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      }
+    });
+    
+
+    const mainPromotionsSwiper = new Swiper('.swiper-main-promotions', {  //This Code initializate the slider in the Promotions View
+      slidesPerColumnFill: 'row',
+      slidesPerView: 1,
+      slidesPerColumn: 1,
+      spaceBetween: 15,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          slidesPerColumn: 1,
+          spaceBetween: 18
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          slidesPerColumn: 1,
+          spaceBetween: 18
+        },
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 4,
+          slidesPerGroup: 8,
+          slidesPerColumn: 2,
+          spaceBetween: 15
+        }
+      },
+      pagination: {
+        el: '.swiper-pagination-blue',
+        dynamicBullets: true,
+        clickable: true,
+      },
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+    });
+
+    const mainDirectorySwiper = new Swiper('.swiper-directory', {  //This Code initializate the slider in the directory View
+      slidesPerColumnFill: 'row',
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          slidesPerColumn: 3,
+          spaceBetween: 18
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          slidesPerColumn: 3,
+          spaceBetween: 18
+        },
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 6,
+          slidesPerGroup: 6,
+          slidesPerColumn: 4,
+          spaceBetween: 15
+        }
+      },
+      pagination: {
+        el: '.swiper-pagination-blue',
+        dynamicBullets: true,
+        clickable: true,
+      }
+    });
+
+    $("#slidebar").slideReveal({  //This code configures the sidebar
+      trigger: $("#slidebarBtn"),
+      push: false,
+      width: 700,
+      overlay: true,
+      overlayColor: 'rgba(0,0,0,0)',
+      show: function(slidebar, trigger){
+//	$("#slidebar").removeClass("d-none");
+	$("#slidebar").css("visibility", "visible");
+        $('.hamburguer-menu').addClass('active');
+        $('#search-icon').css('opacity', '0');
+        $('#search-icon').css('pointer-events', 'none');
+      },
+      hide: function(slidebar, trigger){
+        $('.hamburguer-menu').removeClass('active');
+        $('#search-icon').css('opacity', '1');
+        $('#search-icon').css('pointer-events', 'all');
+      }
+    });
+
+    $("#newsletterForm").submit(function(e){
+      e.preventDefault();
+      let data = $(this).serializeArray();
+      console.log(data);
+      
+      $.ajax({
+        url: $(this).attr('action'),
+        type: 'POST',
+        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        data,
+        success: function(data){
+            //console.log(data);
+            $('#newsletterForm')[0].reset();
+            Swal.fire(
+                'Se ha suscrito exitosamente',
+                '',
+                'success'
+            );
+        }
+    })
+
+
+
+    })
+
+
+    
+
+    $('#mainMap').mapplic({   //Initializate the Map
+      source: 'map-data.json',
+      height: 'auto',
+      minimap: false,
+      sidebar: true,
+      hovertip: true,
+      developer: false,
+      maxscale: 3
+    });
+
+    //Search Function
+
+    load_data();
+
+    function load_data(query){
+      $.ajax({
+          url: $('#search-input').attr('url'),
+          method: "POST",
+          data:{query:query},
+          success:function(data){
+              $('#search_result').html(data);
+              console.log('Busqueda Realizada');
+          }
+      })
+    }
+
+
+
+    $('#search-input').keyup(function(e){
+
+      let search = $(this).val();
+      if(search != ''){
+        load_data(search);
+      }
+      else{
+          load_data();
+      }
+    });
+
+
+    //Filters
+    let url = $(location).attr('href'),
+    parts = url.split("/"),
+    last_part = parts[parts.length-1];
+
+    if(last_part == 'directorio'){
+      filterDirectory(); //Initializate the filter with all the results
+
+      function filterDirectory(filter, url=$('.stores-directory').attr('url')){ //Ajax Request to filter Data Directory
+        //console.log(filter);
+        $.ajax({
+          url: url,
+          method: "POST",
+          data:{filter:filter},
+          success:function(data){
+              $('.swiper-directory .swiper-wrapper').html(data);
+              mainDirectorySwiper.update();
+          }
+        })
+      }
+  
+
+      $('.directory-filters span').click(function(){ //filter Letter
+  
+        $('.directory-filters span').removeClass('active');
+        $('.categories-container span').removeClass('active');
+        $(this).addClass('active');
+  
+        let filter = $(this).text();
+        let url = $('.stores-directory').attr('url');
+        filterDirectory(filter, url);
+      });
+  
+  
+      //Mobile Filter Letter
+  
+      $('#filter-mobile').change(function(){
+        let filter = this.value;
+        filterDirectory(filter);
+      });
+
+      //Category Filter
+
+      $('.category-filter-btn div').click(function(){   //Funticon to show or hide the categories
+        $('.category-filter-btn i').toggleClass('fa-chevron-down');
+        $('.category-filter-btn i').toggleClass('fa-chevron-up');
+        $('.categories-container').toggleClass('active');
+      });
+
+      $('.categories-container span').click(function(){
+        $('.directory-filters span').removeClass('active');
+        $('.categories-container span').removeClass('active');
+        $(this).addClass('active');
+        let filter = $(this).attr('filter');
+        let url = $('.category-filter-btn').attr('url');
+        filterDirectory(filter, url);
+      });
+
+
+
+    }
+
+    //Mapplic Script
+
+    var css = '.mapplic-filtered svg [id^=landmark] > * {opacity: 1 !important; }';
+
+		let mapplic = $('#mapplic').mapplic({
+			source: 'assets/mapa/map.json',
+      customcss: css,
+      height: 'auto',
+      sidebar: true,
+			height: 500,
+			search: true,
+			searchdescription: true,
+			searcheverywhere: true,
+			minimap: false,
+			marker: 'hidden',
+			fillcolor: true,
+			fullscreen: false,
+			developer: false,
+			thumbholder: true,
+			maxscale: 3,
+      alphabetic: true
+		});
+
+    if(last_part.includes('sitio-mapa')){
+
+      //Se agregaron dos lineas de codigo a Mapplic linea 2182 y 2183 para realizar esta funcion
+      setTimeout(() => {
+        $('.map-nav a').removeClass('active');
+        $('.map-nav a').each(function(){
+          if( $(this).attr('select-opt') == $('.map-title').attr('floor')){
+            $(this).addClass('active');
+          }
+        });
+
+        // let mapZoom = document.querySelector('button.mapplic-zoomin-button');
+        // mapZoom.click();
+
+      }, 500);
+
+      let target = document.querySelector('h2.map-title');
+
+      let observer = new MutationObserver((mutationList) => {
+        mutationList.forEach((mutation) => {
+          if(mutation.type === 'attributes'){
+            $('.map-nav a').removeClass('active');
+            $('.map-nav a').each(function(){
+              if( $(this).attr('select-opt') == $('.map-title').attr('floor')){
+                $(this).addClass('active');
+              }
+            });
+          }
+        });
+      });
+      var config = { attributes: true, childList: true, characterData: true };
+      observer.observe(target, config);
+
+      //Change Select Menu of Mapplic Map
+      $('.map-nav a').click(function(e){
+        e.preventDefault();
+
+        $('.map-nav a').removeClass('active');
+        $(this).addClass('active');
+
+
+        let selection = $(this).attr('select-opt');
+        let self = mapplic.data('mapplic');
+        self.hideLocation();
+        self.switchLevel(selection);
+      });
+    }
+});

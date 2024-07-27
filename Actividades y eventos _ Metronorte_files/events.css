@@ -1,0 +1,378 @@
+/****** Eventos ******/
+.event_nav_icon {
+    font-size: 27px;
+    color: white;
+    text-align: right;
+    cursor: pointer;
+    background: var(--secondary-color);
+    padding: 10px;
+    margin-left: -5px;
+    margin-top: -14px;
+}
+.event_nav_icon:hover {
+  background: var(--main-color);
+}
+.event_nav_icon.fa-list  {
+    background:  var(--main-color)!important;
+}
+.row_event_list {
+    margin: 0 2px 60px 2px;
+    background: var(--bg-event-list);
+}
+.row_event_list.today {
+    background: var(--today-color);
+}
+.row_event_list .title_date {
+    color:var(--secondary-color)!important;
+    font-size: 18px;
+    opacity: 0.6;
+}
+.row_event_list.today .title_date,
+.row_event_list.today .desc {
+    color:#5a5a5a !important;
+}
+.row_event_list.today .title_date {
+    opacity: 0.6;
+}
+.row_event_list.today a,
+.row_event_list.today a:active,
+.row_event_list.today a:hover,
+.row_event_list.today a:visited {
+    color:#bf2e1a !important;
+}
+
+.row_event_list_simple {
+    margin: 10px;
+    padding: 15px;
+    border-bottom: 1px solid #F4F4F5;
+}
+.row_event_list_simple:last-child {
+    margin: 10px 10px 0 10px;
+    padding: 15px;
+    border-bottom:none;
+}
+.row_event_list_simple .title_date,
+.row_event_list_simple .desc {
+    /*color:var(--fc-neutral-text-color)!important;*/
+    color:var(--main-color)!important;
+    opacity: 0.6;
+    font-size: 12px;
+    margin-top: 5px!important;
+}
+.row_event_list_simple .title  {
+    font-size: 18px;
+}
+.row_event_list_simple .subtitle_location  {
+    font-size: 14px;
+}
+.row_event_list_simple a,
+.row_event_list_simple a:active,
+.row_event_list_simple a:hover,
+.row_event_list_simple a:visited {
+    color:var(--secondary-color)!important;
+    font-size: 14px;
+}
+.row_event_list .subtitle_location {
+    color:#bf2e1a !important;
+    font-size: 16px;
+}
+row_event_list_simple hr {
+  border-top: 1px solid #F4F4F5;
+}
+
+.event_detail_left {
+    padding-right: 2vw;
+    background: var(--today-color);
+}
+.event_detail_left p {
+    font-size: 16px!important;
+}
+
+.event_detail_left .subtitle_info {
+    font-weight: 300;
+    font-size: 16px;
+}
+.event_detail_left .header-subtitle {
+   opacity: 0.6;
+ }
+.event_detail_left .subtitle_info a,
+.event_detail_left .subtitle_info a:active,
+.event_detail_left .subtitle_info a:hover,
+.event_detail_left .subtitle_info a:visited {
+    color: var(--main-color)!important;
+    text-decoration: underline;
+}
+.event_detail_right {
+    padding: 0;
+}
+
+.event_detail_right {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+.row_event_list .coll img,
+.event_detail_right img {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    object-fit: fill;
+}
+.event_detail_subtitle {
+    color:#8EA7B1!important;
+    opacity: 0.6;
+    font-size: 18px;
+    margin-top: 2vw;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    font-weight: normal;
+}
+.event_detail_title {
+    font-weight: lighter;
+    margin-bottom: 15px;
+    font-size: 36px;
+}
+.event_detail_description {
+    font-size: 16px !important;
+    line-height: 1.2;
+    margin-bottom: 40px;
+}
+.row_event_list .title {
+    color:var(--main-color)!important!important;
+    font-size: 26px;
+}
+
+.row_event_list .desc {
+    margin-bottom: 30px;
+}
+
+.row_event_list .coll {
+    padding: 0;
+}
+.row_event_list .colr {
+    padding: 4vw;
+
+}
+.row_event_list a,
+.row_event_list a:active,
+.row_event_list a:hover,
+.row_event_list a:visited {
+    color:var(--secondary-color)!important;
+    font-size: 16px;
+}
+
+.container_event_detail {
+    width: 100%;
+    max-width: 1600px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.title_backto_events {
+    color: var(--main-color);
+    font-family: var(--secondary-font);
+    font-size: 16px;
+    cursor: pointer;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.no_selection {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select:none;
+}
+div .nogutters {
+    padding: 0;
+}
+.search_event input {
+    width: 100%;
+    border-radius: 0 !important;
+}
+
+.search_event input {
+    background-color: var(--gray-bg);
+    height: 47px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+    color: var(--gray-color-font);
+    text-align: center;
+    border-radius: 0;
+}
+.search_event button {
+    cursor: pointer;
+    pointer-events: all !important;
+}
+.search_event button:disabled {
+    color: var(--gray-color-font)!important;
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+.search_event .input-group-text {
+    background-color: var(--gray-bg);
+    height: 47px;
+    min-width: 47px;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+    color: var(--main-color);
+    text-align: center;
+    border-radius: 0;
+}
+div .formsearchnogutters {
+    padding-right: 0;
+}
+.btn-ev-search-custom {
+    display: block;
+    background-color: var(--secondary-color);
+    color: white !important;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    box-shadow: none;
+    opacity: 100% !important;
+    outline: none!important;
+    outline-color: transparent!important;
+}
+
+.btn-ev-list-custom {
+    position: relative;
+    top: -5px;
+    min-height: 47px;
+    background-color:#f68428;
+    color: white !important;
+    padding: 12px;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    box-shadow: none;
+    opacity: 100% !important;
+    margin: 0;
+    margin-right: -8px;
+    cursor: pointer;
+    outline: none!important;
+    outline-color: transparent!important;
+}
+.btn-ev-list-custom.today {
+    background-color: var(--secondary-color);
+}
+
+.title_lapsetime {
+    padding: 0;
+    font-weight: lighter;
+}
+.title_lapsetime h4>a,
+.title_lapsetime h4>a:active,
+.title_lapsetime h4>a:hover,
+.title_lapsetime h4>a:visited {
+    color: var(--main-color)!important;
+    font-size: 24px;
+}
+
+@media (max-width: 420px) and (max-height: 920px) {
+    .row_event_list {
+        margin: 0 0 60px 0;
+    }
+    .row_event_list .colr {
+        padding: 0 25px 10px 25px;
+    }
+    .event_detail_title {
+        font-size: 18px;
+    }
+    .event_detail_subtitle {
+        font-size: 13px;
+    }
+    .event_detail_left p,
+    .subtitle_info,
+    .title_backto_events {
+      font-size: 16px!important;
+    }
+    .event_detail_description {
+		margin-bottom: 20px;
+	}
+    .title_backto_events {
+        font-size: 15px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+    .btn-ev-search-custom {
+        font-size: 16px;
+        min-width: 120px;
+        min-height: 47px;
+    }
+    div .nogutters:first-child {
+      padding-left: 10px;
+    }
+    div .nogutters:last-child {
+      padding-right: 5px;
+    }
+    .event_nav_icon:last-child {
+        margin-right: -5px;
+    }
+    div .formsearchnogutters {
+        padding: 0;
+        margin: auto;
+    }
+    div .formsearchnogutters .input-group-text {
+        margin-left: -5px;
+    }
+    .title_lapsetime h4 {
+        font-size: 1.5rem;
+    }
+    .btn-ev-list-custom {
+        min-height: 37px;
+        max-height: 37px;
+        padding: 8px;
+        font-size: 16px;
+    }
+    .row_event_list .title {
+        font-size: 18px;
+    }
+    .row_event_list .desc {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .row_event_list .title_date {
+        font-size: 13px;
+    }
+    .row_event_list a, .row_event_list a:active, .row_event_list a:hover, .row_event_list a:visited {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 990px) and (max-height:1380px) {
+    .row_event_list .coll img, .event_detail_right img {
+        width: 100%;
+        height: 100%;
+        min-height: 230px;
+        max-height: 300px;
+    }
+    .event_detail_left {
+        padding-right: 15px;
+    }
+
+    .events-section, .promotions-section, .stores-directory{
+        padding: 0;
+    }
+}
+
+@media (min-width: 991px) and (min-height: 800px) and (max-height: 1080px) {
+    .row_event_list .coll img,
+    .event_detail_right img {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        object-fit: contain;
+    }
+    .row_event_list .coll img {
+      object-fit: fill;
+    }
+}

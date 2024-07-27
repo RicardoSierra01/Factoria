@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'chalet-regular';
+    src: url('../fonts/chalet/chalet.ttf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+    font-family: 'champangne-regular';
+    src: url('../fonts/champagne/Champagne-Limousines.ttf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+    font-family: 'champangne-italic';
+    src: url('../fonts/champagne/Champagne-Limousines-Italic.ttf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+    font-family: 'champangne-bold';
+    src: url('../fonts/champagne/Champagne-Limousines-Bold.ttf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+    font-family: 'champangne-italic-bold';
+    src: url('../fonts/champagne/Champagne-Limousines-Bold-Italic.ttf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+    font-family: 'montserrat-regular';
+    src: url('../fonts/montserrat/Montserrat-Regular.otf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+    font-family: 'montserrat-medium';
+    src: url('../fonts/montserrat/Montserrat-Medium.otf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+    font-family: 'montserrat-light';
+    src: url('../fonts/montserrat/Montserrat-Light.otf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+    font-family: 'spartan-regular';
+    src: url('../fonts/spartan/Spartan-Regular.ttf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+    font-family: 'spartan-medium';
+    src: url('../fonts/spartan/Spartan-Medium.ttf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+    font-family: 'spartan-bold';
+    src: url('../fonts/spartan/Spartan-Bold.ttf'); /* IE9 Compat Modes */
+}
