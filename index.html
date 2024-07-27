@@ -1229,6 +1229,10 @@ a {
 a:focus, a:hover {
     color: #f68428 !important;
 }
+.hidden {
+            display: none !important;
+        }
+        
 </style>
 <div class="container">
     <div class="row">
@@ -1236,166 +1240,122 @@ a:focus, a:hover {
             <section class="container my-5 py5">
                 <h2>Categorías</h2>
                 <ul id="directoryCategories" class="filter-categories-list hide-on-med-and-down">
-                                                            <li data-category-id="5" data-category-code="store_opening" class="parent-category-item">
+                    <li data-category-id="5" data-category-code="store_opening" class="parent-category-item">
                         <div>
-                            <a href="https://metronorte.com.gt/actividades/?ctg=5#anclaje" class="category"><span>Culturales</span></a>
+                            <a class="category" onclick="filterCategories('cultural')"><span>Culturales</span></a>
                         </div>
                     </li>
-                                        <li data-category-id="4" data-category-code="store_opening" class="parent-category-item">
+                    <li data-category-id="4" data-category-code="store_opening" class="parent-category-item">
                         <div>
-                            <a href="https://metronorte.com.gt/actividades/?ctg=4#anclaje" class="category"><span>Deportivos</span></a>
+                            <a class="category" onclick="filterCategories('deportivo')"><span>Deportivos</span></a>
                         </div>
                     </li>
-                                        <li data-category-id="1" data-category-code="store_opening" class="parent-category-item">
+                    <li data-category-id="1" data-category-code="store_opening" class="parent-category-item">
                         <div>
-                            <a href="https://metronorte.com.gt/actividades/?ctg=1#anclaje" class="category"><span>Familiares</span></a>
+                            <a class="category" onclick="filterCategories('familiar')"><span>Familiares</span></a>
                         </div>
                     </li>
-                                        <li data-category-id="6" data-category-code="store_opening" class="parent-category-item">
+                    <li data-category-id="6" data-category-code="store_opening" class="parent-category-item">
                         <div>
-                            <a href="https://metronorte.com.gt/actividades/?ctg=6#anclaje" class="category"><span>Festivales</span></a>
+                            <a class="category" onclick="filterCategories('festival')"><span>Festivales</span></a>
                         </div>
                     </li>
-                                        <li data-category-id="2" data-category-code="store_opening" class="parent-category-item">
+                    <li data-category-id="2" data-category-code="store_opening" class="parent-category-item">
                         <div>
-                            <a href="https://metronorte.com.gt/actividades/?ctg=2#anclaje" class="category"><span>Infantiles</span></a>
+                            <a class="category" onclick="filterCategories('infantil')"><span>Infantiles</span></a>
                         </div>
                     </li>
-                                        <li data-category-id="3" data-category-code="store_opening" class="parent-category-item">
+                    <li data-category-id="3" data-category-code="store_opening" class="parent-category-item">
                         <div>
-                            <a href="https://metronorte.com.gt/actividades/?ctg=3#anclaje" class="category"><span>Pet Friendly</span></a>
+                            <a class="category" onclick="filterCategories('pet_friendly')"><span>Pet Friendly</span></a>
                         </div>
                     </li>
-                                        <li data-category-id="0" data-category-code="store_opening" class="parent-category-item">
+                    <li data-category-id="0" data-category-code="store_opening" class="parent-category-item">
                         <div>
-                            <a href="https://metronorte.com.gt/actividades/#anclaje" class="category"><span style="color:#fff; font-weight:600; background:#e2211c; padding:2px 8px 2px 4px; border-radius:3px;">Todos</span></a>
+                            <a class="category" onclick="filterCategories('all')"><span style="color:#fff; font-weight:600; background:#e2211c; padding:2px 8px 2px 4px; border-radius:3px;">Todos</span></a>
                         </div>
                     </li>                    
                 </ul>
             </section>
         </div>
 
-        
-            <div class="col-12 col-lg-9">
-                <div class="tab-pane active" id="resp-tab1">
-                    <section class="container news-section my-5 pt-2">
-                        <div class="container">
-                            <div class="row">
-                                <div id="cards_landscape_wrap-2">
+        <div class="col-12 col-lg-9">
+            <div class="tab-pane active" id="resp-tab1">
+                <section class="container news-section my-5 pt-2">
+                    <div class="container">
+                        <div class="row" id="cardsContainer">
+                            <div id="cards_landscape_wrap-2">
+                                
+                                <div class="col-12 col-md-5 col-lg-4 familiar infantil">
+                                    <div class="card-flyer">
+                                        <div class="text-box">
+                                            <div class="image-box">
+                                                <img src="./Actividades y eventos _ Metronorte_files/logo-04072412380914B.png" alt="">
+                                            </div>
+                                            <div class="pd-area alto" style="background-color:#c22622;">
+                                                <h4 class="title_date" style="color: white;"><b>06/07/2024 al 28/07/2024</b></h4>
+                                                <h3 class="slides-title" style="color: #ffffff;">Rincón Del Arte </h3>
+                                                <span class="slides-subtitle">Casita de Chocolate </span>
+                                                <p class="slides-content" style="font-size: .8em;">Sábados y domingos del mes desde la 1:00 p.m. Manualidades y talleres. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-5 col-lg-4 deportivo">
+                                    <div class="card-flyer">
+                                        <div class="text-box">
+                                            <div class="image-box">
+                                                <img src="./Actividades y eventos _ Metronorte_files/logo-0407241244509F6.png" alt="">
+                                            </div>
+                                            <div class="pd-area alto" style="background-color:#c22622;">
+                                                <h4 class="title_date" style="color: white;"><b>13/07/2024 al 27/07/2024</b></h4>
+                                                <h3 class="slides-title" style="color: #ffffff;">MetroZumba </h3>
+                                                <span class="slides-subtitle">Plaza de Eventos</span>
+                                                <p class="slides-content" style="font-size: .8em;">Sábados 13, 20 y 27 de julio a partir de las 3:00 p.m. Clases de Zumba. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-5 col-lg-4 cultural familiar festival infantil">
+                                    <div class="card-flyer">
+                                        <div class="text-box">
+                                            <div class="image-box">
+                                                <img src="./Actividades y eventos _ Metronorte_files/logo-040724124844F4B.png" alt="">
+                                            </div>
+                                            <div class="pd-area alto" style="background-color:#c22622;">
+                                                <h4 class="title_date" style="color: white;"><b>28/07/2024 </b></h4>
+                                                <h3 class="slides-title" style="color: #ffffff;">Clasificatoria Bandas CBG </h3>
+                                                <span class="slides-subtitle">Parqueo</span>
+                                                <p class="slides-content" style="font-size: .8em;">Domingo 28 de julio desde de las 8:00 a.m. Clasificatoria Campeonato Nacional Comunidad de Bandas.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-5 col-lg-4 cultural familiar festival deportivo">
+                                    <div class="card-flyer">
+                                        <div class="text-box">
+                                            <div class="image-box">
+                                                <img src="./Actividades y eventos _ Metronorte_files/logo-040724125045C16.png" alt="">
+                                            </div>
+                                            <div class="pd-area alto" style="background-color:#c22622;">
+                                                <h4 class="title_date" style="color: white;"><b>10/08/2024 </b></h4>
+                                                <h3 class="slides-title" style="color: #ffffff;">Encuentro Inter Cívico CBG México </h3>
+                                                <span class="slides-subtitle">Parqueo</span>
+                                                <p class="slides-content" style="font-size: .8em;">Sábado 10 de agosto desde las 10:00 a.m. Presentación de Bandas de Guerra pertenecientes a México.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                
-                    
-                    <div class="col-12 col-md-5 col-lg-4">
-                        <div class="card-flyer">
-                            <div class="text-box">
-                                <div class="image-box">
-                                    <img src="./Actividades y eventos _ Metronorte_files/logo-04072412380914B.png" alt="">
-                                </div>
-                                <div class="pd-area alto" style="background-color:#c22622;">
-                                    <h4 class="title_date" style="color: white;"><b>06/07/2024 al 28/07/2024</b></h4>
-                                <h3 class="slides-title" style="color: #ffffff;">Rincón Del Arte </h3>
-                                <span class="slides-subtitle">Casita de Chocolate </span>
-                                <p class="slides-content" style="font-size: .8em;">Sábados y domingos del mes desde la 1:00 p.m. Manualidades y talleres. </p>
-                                </div>
                             </div>
                         </div>
                     </div>
-
-                
-                    
-                    <div class="col-12 col-md-5 col-lg-4">
-                        <div class="card-flyer">
-                            <div class="text-box">
-                                <div class="image-box">
-                                    <img src="./Actividades y eventos _ Metronorte_files/logo-0407241244509F6.png" alt="">
-                                </div>
-                                <div class="pd-area alto" style="background-color:#c22622;">
-                                                                        <h4 class="title_date" style="color: white;"><b>13/07/2024 al 27/07/2024</b></h4>
-                                                                        <h3 class="slides-title" style="color: #ffffff;">MetroZumba </h3>
-                                                                        <span class="slides-subtitle">Plaza de Eventos</span>
-                                                                        <p class="slides-content" style="font-size: .8em;">Sábados 13, 20 y 27 de julio a partir de las 3:00 p.m.
-Clases de Zumba. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                
-                    
-                    <div class="col-12 col-md-5 col-lg-4">
-                        <div class="card-flyer">
-                            <div class="text-box">
-                                <div class="image-box">
-                                    <img src="./Actividades y eventos _ Metronorte_files/logo-040724124844F4B.png" alt="">
-                                </div>
-                                <div class="pd-area alto" style="background-color:#c22622;">
-                                                                        <h4 class="title_date" style="color: white;"><b>28/07/2024 </b></h4>
-                                                                        <h3 class="slides-title" style="color: #ffffff;">Clasificatoria Bandas CBG </h3>
-                                                                        <span class="slides-subtitle">Parqueo</span>
-                                                                        <p class="slides-content" style="font-size: .8em;">Domingo 28 de julio desde de las 8:00 a.m. Clasificatoria Campeonato Nacional Comunidad de Bandas.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                
-                    
-                    <div class="col-12 col-md-5 col-lg-4">
-                        <div class="card-flyer">
-                            <div class="text-box">
-                                <div class="image-box">
-                                    <img src="./Actividades y eventos _ Metronorte_files/logo-040724125045C16.png" alt="">
-                                </div>
-                                <div class="pd-area alto" style="background-color:#c22622;">
-                                                                        <h4 class="title_date" style="color: white;"><b>10/08/2024 </b></h4>
-                                                                        <h3 class="slides-title" style="color: #ffffff;">Encuentro Inter Cívico CBG México </h3>
-                                                                        <span class="slides-subtitle">Parqueo</span>
-                                                                        <p class="slides-content" style="font-size: .8em;">Sábado 10 de agosto desde las 10:00 a.m. Presentación de Bandas de Guerra pertenecientes a México.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+                </section>
             </div>
-
-        
+        </div>
     </div>
 </div>
 
-<style>
-.footer h2 {
-    font-size: 20px;
-}
-p.p-css {
-    font-size: 16px;
-}
-div.footer-section {
-    min-height: 205px;
-}
-.events-section, .promotions-section, .stores-directory {
-    padding: 0;
-}
-
-.footer i.icons-generic {
-  font-size: 20px;
-}
-
-.footer i.icons-socials {
-  font-size: 30px;
-}
-
-@media (max-width:575px) {
-	div.footer-section {
-  		min-height: 140px;
-	}
-}
-</style>
 
 <script src="./Actividades y eventos _ Metronorte_files/jquery.min.js.descargar"></script>
 <script src="./Actividades y eventos _ Metronorte_files/popper.min.js.descargar"></script>
@@ -1463,6 +1423,21 @@ div.footer-section {
       } );
       fakewaffle.responsiveTabs( [ 'xs', 'sm' ] );
   } )( jQuery );
+</script>
+<script>
+    function filterCategories(category) {
+            const cards = document.querySelectorAll('#cardsContainer .col-12');
+
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.classList.remove('hidden');
+                } else if (card.classList.contains(category)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
 </script>
 
 
